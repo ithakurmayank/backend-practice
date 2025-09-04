@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= fileName %></title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-zinc-900 text-gray-100 min-h-screen flex items-center justify-center p-8">
+  <div class="max-w-2xl w-full bg-zinc-800 p-6 rounded-2xl shadow-lg">
+    <!-- File Title -->
+    <h1 class="text-2xl font-bold mb-4 text-white">
+      <%= fileName %>
+    </h1>
+
+    <!-- File Content -->
+    <div class="bg-zinc-900 rounded-xl p-4 h-80 overflow-y-auto mb-6">
+      <pre class="whitespace-pre-wrap text-gray-300"><%= data %></pre>
+    </div>
+
+    <!-- Back Button -->
+    <div class="flex justify-end">
+      <a href="/" 
+         class="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded-lg shadow transition">
+        ← Home Page
+      </a>
+    </div>
+  </div>
+</body>
+
+</html>
