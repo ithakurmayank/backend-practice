@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create User Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body >
+  <div class="w-full h-full bg-zinc-900">
+    <a class="text-blue-500 mb-3 ml-4" href="/read">Read Users</a>
+  <h1 class="text-2xl font-semibold text-white mb-6 ml-4">Update User</h1>
+  
+    <form class="flex gap-4 bg-zinc-800 p-6 rounded-2xl shadow-lg mx-4" action="/edituser/<%= user._id %>" method="post">
+      
+      <!-- Name Input -->
+      <input 
+        type="text" 
+        placeholder="Name" 
+        name="name"
+        value="<%= user.name %>"
+        class="w-64 h-11 border border-zinc-600 bg-zinc-700 text-white rounded-xl px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      >
+
+      <!-- Email Input -->
+      <input 
+        type="email" 
+        placeholder="Email" 
+        name="email"
+        value="<%= user.email %>"
+        class="w-64 h-11 border border-zinc-600 bg-zinc-700 text-white rounded-xl px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      >
+
+      <!-- Image URL Input -->
+      <input 
+        type="url" 
+        placeholder="Image URL" 
+        name="image"
+        value="<%= user.image %>"
+        class="w-64 h-11 border border-zinc-600 bg-zinc-700 text-white rounded-xl px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      >
+
+      <!-- Submit Button -->
+      <button 
+        type="submit" 
+        class="h-11 px-6 bg-yellow-600 text-black rounded-xl hover:bg-blue-700 transition"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</body>
+</html>

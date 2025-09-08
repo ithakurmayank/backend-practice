@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Cards</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="w-full h-screen bg-zinc-900 p-8">
+    <a class="text-blue-500 mb-3" href="/">Home page</a>
+    <h1 class="text-2xl font-semibold text-white mb-6">All Users</h1>
+
+    <!-- Grid Wrapper -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <% if(!users.length){ %>
+            <h3 class="text-white font-large">No Users yet!!</h3>
+            <% }else{ %>
+                <% users.forEach(user=> { %>
+                    <!-- User Card -->
+                    <div class="bg-zinc-800 rounded-xl shadow-md overflow-hidden p-4 flex flex-col">
+                        <!-- Image placeholder -->
+                        <div class="w-full h-40 bg-zinc-700 rounded-lg mb-4 overflow-hidden">
+                            <img src="<%= user.image %>" alt="user" class="w-full h-full object-cover object-center">
+                        </div>
+
+                        <!-- User info -->
+                        <h2 class="text-white font-medium">
+                            <%= user.name %>
+                        </h2>
+                        <p class="text-zinc-400 text-sm">
+                            <%= user.email %>
+                        </p>
+
+                        <!-- Actions -->
+                        <div class="flex items-center gap-4 mt-4 text-sm">
+                            <a class="text-blue-400 hover:underline" href="/edit/<%= user._id %>">Edit User</a>
+                            <a class="text-red-500 hover:underline" href="/delete/<%= user._id %>">Delete User</a>
+                        </div>
+                    </div>
+                    <% }) %>
+
+                        <% } %>
+    </div>
+
+</body>
+
+</html>
